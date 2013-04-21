@@ -18,11 +18,15 @@ try{
 	}
 
 	fileName += ".9.png";
-	var folder = folderURL.replace("file:///", "");
-
-	folder = folder.replace("|", ":");
-	folder = folder.replace(/\//g, "\\");
-	folder += "\\output\\";
+	var folder = folderURL;
+	if( 'win' == fw.platform ) {
+		folder = folder.replace("file:///", "");
+		folder = folder.replace("|", ":");
+		folder = folder.replace(/\//g, "\\");
+		folder += "\\output\\";
+	} else {
+		folder += "/output/";
+	}
 	folderURL += "/output/";
 	var createFolder = new Folder (folder);
 	createFolder.create();
