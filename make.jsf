@@ -12,7 +12,7 @@ try{
 		fw.saveDocumentAs(null, true);
 		var fileName = dom.docTitleWithoutExtension;
 	}
-	folderURL = fw.browseForFolderURL("Save as","file:///c/");
+	folderURL = fw.browseForFolderURL("Save as",null);
 	if(!fileName || !folderURL){
 		 throw new Error("Process cancelled");
 	}
